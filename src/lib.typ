@@ -14,7 +14,7 @@
 /// >>> #show: doc => scale(90%, doc)
 /// #frontpage(
 ///   title: [Poli Template],
-///   logo: "/template/logo.jpg",
+///   logo: image("/template/logo.jpg", width: 70%),
 ///   students: (
 ///     ([Student 1],[13685478]),
 ///     ([Student 2],[13645638]),
@@ -57,8 +57,8 @@
   /// ```
   /// -> array | none
   teachers: (), // ( [name1], [name2], ... )
-  /// Path to cover's logo image
-  /// -> str | none
+  /// cover's logo image
+  /// -> image | none
   logo: none,
   /// Prevent default pagebreak after cover
   /// -> bool
@@ -79,7 +79,12 @@
   ]
 
   if logo != none {
-    align(center + horizon, image(logo, width: 70%))
+    set image(width: 70%)
+    if type(logo) == str {
+      align(center + horizon, image(logo, width: 70%))
+    } else {
+      align(center + horizon, logo)
+    }
   }
 
   let valid_array(arr, default) = if (type(arr) == array and arr.len() > 0) {
@@ -138,8 +143,8 @@
   /// Title of the document
   /// -> str | content
   title: [Poli Template],
-  /// Path to cover's logo image
-  /// -> str | none
+  /// cover's logo image
+  /// -> image | none
   logo: none,
   /// Authors of the document.\
   /// A list of name and NUSP (optional) in the following format:
@@ -164,11 +169,11 @@
   /// Place where the document was written
   /// -> str | content | none
   location: [],
-  /// Path to reference file (".bib")
-  references: none,
+  /// bibliography
+  bibliography: none,
   /// A list of header names where to not render the footer
   ///
-  /// -> array | none
+  /// -> bibliography | none
   footer_ignore: none,
   /// Document content
   /// -> content
@@ -253,11 +258,7 @@
   #doc
 
   // Show bibliography if a ".bib" file is provided
-  #if (references != none) {
-    bibliography(
-      references,
-      style: "associacao-brasileira-de-normas-tecnicas",
-      full: true,
-    )
+  #if (bibliography != none) {
+    bibliography
   }
 ]

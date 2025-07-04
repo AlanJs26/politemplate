@@ -33,8 +33,12 @@ To use this template, simply import it as shown below:
     Turma 1
   ],
   location: [São Paulo, SP],
-  logo: "./logo.jpg",
-  references: "./references.bib",
+  logo: image("./logo.jpg"),
+  bibliography: bibliography(
+    "./references.bib",
+    style: "associacao-brasileira-de-normas-tecnicas",
+    full: true,
+  ),
   footer_ignore: ("Conclusão",)
 )
 
