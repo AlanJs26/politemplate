@@ -9,16 +9,7 @@ default:
 # generate manual
 doc:
   typst compile docs/manual.typ docs/manual.pdf
-  typst compile docs/thumbnail.typ thumbnail-light.svg
-  typst compile --input theme=dark docs/thumbnail.typ thumbnail-dark.svg
-
-# run test suite
-test *args:
-  tt run {{ args }}
-
-# update test cases
-update *args:
-  tt update {{ args }}
+  typst compile docs/thumbnail.typ thumbnail.png
 
 # package the library into the specified destination folder
 package target:
@@ -41,4 +32,4 @@ uninstall: (remove "@local")
 uninstall-preview: (remove "@preview")
 
 # run ci suite
-ci: test doc
+ci: doc

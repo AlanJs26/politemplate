@@ -1,14 +1,3 @@
-# The `politemplate` Package
-<div align="center">Version 0.1.0</div>
-
-Template I used when writing all sort of things in university
-
-## Getting Started
-
-To use this template, simply import it as shown below:
-
-
-```typ
 #import "@preview/politemplate:0.1.0": politemplate
 
 #show: politemplate.with(
@@ -32,5 +21,41 @@ To use this template, simply import it as shown below:
   footer_ignore: ("Conclusão",)
 )
 
-// Your content goes here
-```
+= A
+
+#lorem(100)
+
+== A.a
+
+#lorem(100)
+== A.b
+
+#lorem(100)
+
+// By default, a pagebreak is placed before all headings. To Ignore this behaviour, add #metadata("nobreak") at the header's end
+= B #metadata("nobreak")
+
+#lorem(100)
+
+== B.a
+
+#lorem(100)
+== B.b
+
+#lorem(100)
+
+= C
+
+#lorem(100)
+
+== C.a
+
+#lorem(100)
+== C.b
+
+#lorem(100)
+// #include("Textos/Introdução.typ")
+
+= Conclusão
+
+#lorem(200)

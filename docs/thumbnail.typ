@@ -1,10 +1,23 @@
-#import "/src/lib.typ" as my-package: *
+#import "/src/lib.typ": frontpage
 
-#set page(height: auto, margin: 5mm, fill: none)
+// // style thumbnail for light and dark theme
+// #let theme = sys.inputs.at("theme", default: "light")
 
-// style thumbnail for light and dark theme
-#let theme = sys.inputs.at("theme", default: "light")
-#set text(white) if theme == "dark"
-
-#set text(22pt)
-#align(center)[_a thumbnail showing the package's output_]
+#frontpage(
+  title: [Poli Template],
+  logo: "/template/logo.jpg",
+  students: (
+    ([Student 1],[13685478]),
+    ([Student 2],[13645638]),
+  ),
+  teachers: (
+    [Teacher 1],
+    [Teacher 2],
+  ),
+  header: [
+    departamento de engenharia elétrica\
+    PRO3821 - Fundamentos da economia\
+    Turma 1
+  ],
+  footer: [São Paulo, SP],
+)
