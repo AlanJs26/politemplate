@@ -5,7 +5,7 @@
 
 #frontpage(
   title: [Poli Template],
-  logo: "/template/logo.jpg",
+  logo: image("/template/logo.jpg", width: 70%),
   students: (
     ([Student 1],[13685478]),
     ([Student 2],[13645638]),

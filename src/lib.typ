@@ -14,7 +14,7 @@
 /// >>> #show: doc => scale(90%, doc)
 /// #frontpage(
 ///   title: [Poli Template],
-///   logo: image("/template/logo.jpg", width: 70%),
+///   logo: "/template/logo.jpg",
 ///   students: (
 ///     ([Student 1],[13685478]),
 ///     ([Student 2],[13645638]),
