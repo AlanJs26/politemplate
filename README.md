@@ -1,7 +1,13 @@
 # The `politemplate` Package
 <div align="center">Version 0.1.0</div>
+<br/>
 
-Template I used when writing all sort of things in university
+<p align="center">
+  <img src="./thumbnail.png" width="45%">
+</p>
+
+
+<div align="center">Template I used when writing all sort of things in university</div>
 
 ## Getting Started
 
